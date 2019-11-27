@@ -18,8 +18,8 @@
       var color = tgt.getAttribute("data-color");
       if (color) {
         this.fireEvent("pickcolor", color);
+        document.getElementById('exactColor').value = '';
       }
-      document.getElementById('exactColor').value = '';
     },
     _onTableOver: function(evt) {
       var tgt = evt.target || evt.srcElement;
@@ -33,6 +33,7 @@
     },
     _onPickNoColor: function() {
       this.fireEvent("picknocolor");
+      document.getElementById('exactColor').value = '';
     },
     _onCheckColor:function(evt){
       var color = document.getElementById('exactColor').value;
